@@ -6,6 +6,7 @@ const app = express()
 
 app.set('view engine', 'ejs')
 
+
 //seteo de carpeta public para archivos estaticos
 app.use(express.static('public'))
 
