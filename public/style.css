@@ -13,14 +13,14 @@ body {
 
 .form-container h1 {
     align-items: center;
-    font-family: "Kanit", sans-serif;
+    font-family: "Signika", sans-serif;
     font-weight: 700;
     font-style: normal;
     z-index: 2;
 }
 
 .form-container p {
-    font-family: "Kanit", sans-serif;
+    font-family: "Signika", sans-serif;
     font-weight: 300;
     font-style: normal;
 }
@@ -87,13 +87,13 @@ button:hover {
 
 .cerrar-sesion-container h1 {
     align-items: center;
-    font-family: "Kanit", sans-serif;
+    font-family: "Signika", sans-serif;
     font-weight: 700;
     font-style: normal;
 }
 
 .cerrar-sesion-container a {
-    font-family: "Kanit", sans-serif;
+    font-family: "Signika", sans-serif;
     font-weight: bold;
     font-style: normal;
     text-decoration: none;
@@ -137,7 +137,7 @@ p a:hover {
 
 h2 {
     align-items: center;
-    font-family: "Kanit", sans-serif;
+    font-family: "Signika", sans-serif;
     font-weight: 500;
     font-style: normal;
 }
@@ -168,13 +168,13 @@ h2 {
 }
 
 .custom-title {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Signika', sans-serif;
     font-size: 30px;
     color: rgb(0, 213, 255);
 }
 
 .custom-content {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Signika', sans-serif;
     font-size: 18px;
     color: #333;
 }
@@ -185,7 +185,7 @@ h2 {
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Signika', sans-serif;
     font-size: 16px;
 }
 
