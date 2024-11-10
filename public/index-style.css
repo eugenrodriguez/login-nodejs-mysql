@@ -1,0 +1,409 @@
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Signika", sans-serif;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 20px 20px 0 0;
+    /* Redondea solo las esquinas superiores */
+    width: 800px;
+    margin: 100px auto;
+    width: 80%;
+    position: relative;
+
+}
+
+table caption {
+    font-size: 40px;
+    background-color: rgb(0, 225, 255);
+    color: white;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+td,
+th {
+    border: solid 1px grey;
+    padding: 5px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(189, 247, 255);
+}
+
+td:nth-child(n + 3),
+th:nth-child(n + 3) {
+    text-align: center;
+}
+
+thead {
+    background-color: rgb(1, 50, 56);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.boton-editar {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(0, 225, 255);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+
+.boton-borrar {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(249, 60, 60);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.boton-ver {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(162, 162, 162);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.boton-editar:hover {
+    background-color: rgb(0, 203, 255)
+}
+
+.boton-borrar:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.boton-ver:hover {
+    background-color: rgb(132, 132, 132);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    flex-direction: column;
+}
+
+.boton-create {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: rgb(0, 225, 255);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    position: absolute;
+    /* Para posicionar el botón fuera del caption */
+    top: -40px;
+    /* Mueve el botón hacia arriba fuera del caption */
+    left: 0px;
+    /* Ajusta la posición horizontal del botón */
+    /* Asegura que el botón esté encima del caption */
+    transition: background-color 0.2s;
+    transition: border-radius 0.2s;
+
+
+}
+
+.boton-create .plus {
+    z-index: 2;
+}
+
+
+.hidden-text {
+    /* Mantiene el texto oculto */
+    background-color: rgb(0, 200, 230);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 12px 15px 12px 25px;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    /* Posiciona el texto sobre el enlace */
+    left: 100%;
+    transform: translateX(-23%);
+    white-space: nowrap;
+    /* Evita que el texto se divida en líneas */
+    opacity: 0;
+    /* Inicialmente oculto */
+
+    /* Transición suave */
+}
+
+/* Muestra el texto oculto cuando se posa el cursor sobre el enlace */
+a:hover .hidden-text {
+    opacity: 1;
+    transition: opacity 0.2s;
+    /* Hace visible el texto */
+}
+
+
+.boton-create:hover {
+    background-color: rgb(0, 200, 230);
+    border-radius: 50% 50% 5px 5px;
+    /* Color más oscuro al pasar el ratón */
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.collapsed {
+    display: none;
+}
+
+nav {
+    background-color: rgb(1, 50, 56);
+    color: white;
+    width: 100%;
+}
+
+nav .mobile {
+    display: none;
+}
+
+nav .mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+nav .mobile .header .more button {
+    border: none;
+    background-color: #00c3ff;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.mini .submenu:hover {
+    border-radius: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 20px 25px;
+    transition: background-color 0.3s;
+    transition: border-radius 0.3s;
+}
+
+nav a:hover {
+    color: black;
+    background-color: rgb(0, 225, 255);
+    border-radius: 15px;
+    transition: background-color 0.3s;
+    transition: border-radius 0.3s;
+}
+
+nav .desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .desktop .primary,
+nav .desktop .secondary {
+    display: flex;
+}
+
+nav .desktop .secondary.mini {
+    display: none;
+}
+
+.logo {
+    max-width: 70px;
+    height: auto;
+}
+
+
+@media screen and (max-width: 894px) {
+
+    nav .secondary.full {
+        display: none;
+
+    }
+
+    nav .secondary.full:hover {
+        display: none;
+        background-color: rgb(0, 225, 255);
+        border-radius: 15px;
+
+    }
+
+    nav .secondary.mini {
+        display: block !important;
+    }
+
+    nav .more {
+        margin: 0;
+    }
+
+    nav .secondary.mini .submenu {
+        background-color: rgb(1, 50, 56);
+        position: absolute;
+        display: none;
+        width: 200px;
+        right: 0;
+    }
+
+    nav .secondary.mini:hover .submenu {
+        display: block;
+    }
+
+
+}
+
+
+
+/* Contenedor de bienvenida */
+.bienvenida-container {
+    max-width: 100%;
+    padding: 30px;
+    background-color: rgb(144, 251, 255);
+    margin-bottom: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    table {
+        width: 100%;
+        /* La tabla ocupa todo el ancho en pantallas pequeñas */
+        /* Ajustar el tamaño de texto para pantallas pequeñas */
+    }
+
+    /* Cambia la visualización de las columnas en pantallas pequeñas */
+    td,
+    th {
+        display: block;
+        /* Mostrar los datos en formato de bloque */
+        width: 100%;
+        /* Cada celda ocupa el ancho completo */
+        text-align: right;
+        /* Alineación a la derecha */
+        padding-left: 50%;
+        /* Espacio para colocar el encabezado simulado */
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    td:nth-child(n + 3),
+    th:nth-child(n + 3) {
+        text-align: right;
+    }
+
+    /* Ajuste para los encabezados */
+    td:before,
+    th:before {
+        content: attr(data-label);
+        /* Usar el atributo personalizado data-label para mostrar el nombre de la columna */
+        position: absolute;
+        left: 0;
+        width: 45%;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    td,
+    th {
+        border: none;
+        /* Elimina las líneas de borde */
+        padding: 30px;
+        /* Ajusta el espaciado */
+        border-bottom: 1px solid grey;
+        /* Añade un borde suave en cada celda */
+        font-size: 15px;
+    }
+
+    tr {
+        margin-bottom: 10px;
+        /* Espacio entre filas */
+        display: block;
+        /* Mostrar cada fila como un bloque */
+    }
+
+    thead {
+        display: none;
+        /* Ocultar el encabezado en pantallas pequeñas */
+    }
+
+    caption {
+        font-size: 24px;
+        /* Ajustar el tamaño del título en pantallas pequeñas */
+    }
+
+    tr:nth-child(even) {
+        background-color: rgb(255, 255, 255);
+    }
+
+    .actions {
+        border-bottom: 10px solid rgb(1, 50, 56);
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+    nav .desktop {
+        display: none;
+    }
+
+    nav .mobile {
+        display: block;
+    }
+
+    container {
+        width: 200px;
+    }
+
+    td,
+    th {
+        border: none;
+        /* Elimina las líneas de borde */
+        padding: 30px;
+        /* Ajusta el espaciado */
+        border-bottom: 1px solid grey;
+        /* Añade un borde suave en cada celda */
+        font-size: 12px;
+    }
+
+
+
+
+}

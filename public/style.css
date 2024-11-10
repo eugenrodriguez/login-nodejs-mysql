@@ -1,0 +1,272 @@
+html {
+    background-color: white;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100svh;
+    font-size: larger;
+}
+
+.form-container h1 {
+    align-items: center;
+    font-family: "Signika", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    z-index: 2;
+}
+
+.form-container p {
+    font-family: "Signika", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.form-container {
+    width: 500px;
+    background-color: rgb(144, 251, 255);
+    border-radius: 30px;
+    padding: 40px;
+    border: 10px rgb(0, 213, 255) solid;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form+p,
+form p {
+    text-align: center;
+}
+
+input,
+button {
+    border-radius: 15px;
+    border: unset;
+    padding: 15px 30px;
+    font-size: 17px;
+    transition: box-shadow 0.3s ease;
+}
+
+input:hover,
+button:hover {
+    box-shadow: 0 0 1rem #ffffff;
+    transition: box-shadow 0.2s ease;
+}
+
+input:focus {
+    outline-color: rgb(0, 213, 255);
+}
+
+button {
+    background-color: rgb(0, 225, 255);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(0, 203, 255);
+    box-shadow: 0 0 1rem #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.cerrar-sesion-container {
+    width: 500px;
+    background-color: rgb(144, 251, 255);
+    border-radius: 15px;
+    padding: 40px;
+    border: 10px rgb(0, 213, 255) solid;
+}
+
+.cerrar-sesion-container h1 {
+    align-items: center;
+    font-family: "Signika", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.cerrar-sesion-container a {
+    font-family: "Signika", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none;
+}
+
+p a {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgb(0, 225, 255);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: small;
+    text-decoration: none;
+    text-align: center;
+}
+
+p a:hover {
+    background-color: rgb(0, 205, 255);
+    box-shadow: 0 0 1rem #ffffff;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.cerrar {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgb(0, 225, 255);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cerrar:hover {
+    background-color: rgb(0, 205, 255);
+    box-shadow: 0 0 1rem #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+h2 {
+    align-items: center;
+    font-family: "Signika", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.error {
+
+    color: rgb(255, 0, 0);
+}
+
+.escondido {
+    display: none;
+}
+
+.sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Estilos personalizados para SweetAlert2 */
+.custom-popup {
+    border: 2px rgb(0, 213, 255) solid;
+    padding: 30px;
+    border-radius: 30px;
+}
+
+.custom-title {
+    font-family: 'Signika', sans-serif;
+    font-size: 30px;
+    color: rgb(0, 213, 255);
+}
+
+.custom-content {
+    font-family: 'Signika', sans-serif;
+    font-size: 18px;
+    color: #333;
+}
+
+.custom-confirm-button {
+    background-color: rgb(0, 205, 255);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-family: 'Signika', sans-serif;
+    font-size: 16px;
+}
+
+.alternativa {
+    display: block;
+    margin-top: 10px;
+}
+
+.image-container {
+    position: fixed;
+    /* Usa 'absolute' si prefieres posicionarlo relativo al contenedor */
+    top: 20px;
+    /* Ajusta la distancia desde la parte superior */
+    left: 40px;
+    /* Ajusta la distancia desde el borde izquierdo */
+    z-index: 1000;
+}
+
+.logo {
+    max-width: 100px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        width: 95%;
+        /* Ajuste del ancho del formulario para pantallas pequeñas */
+        padding: 20px;
+        /* Ajuste del padding */
+    }
+
+    .form-container h1 {
+        font-size: 30px;
+    }
+
+    .logo {
+        max-width: 60px;
+        /* Tamaño del logo en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+
+    .form-container {
+        width: 80%;
+        height: auto;
+        /* Ajustar la altura automáticamente */
+        padding: 15px;
+        margin: auto;
+        /* Centrar horizontalmente */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* Centrar verticalmente */
+
+    }
+
+    .logo {
+        max-width: 50px;
+        /* Tamaño del logo en pantallas muy pequeñas */
+    }
+
+    input,
+    button {
+        padding: 10px;
+        /* Reduce el padding en pantallas pequeñas */
+        font-size: 15px;
+        /* Ajuste del tamaño de la fuente */
+    }
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('images/img-fondo-unmar.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(5px);
+    /* Desenfoque inicial */
+}

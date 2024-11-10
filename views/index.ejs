@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <title>ABM</title>
+    <link rel="stylesheet" href="/index-style.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="mobile">
+            <div class="header">
+                <div class="logo"><img class="logo" src="/images/logo-unmar-vector.svg" alt="logo Unmar" /></div>
+                <div class="more">
+                    <button id="bMore"><span class="material-symbols-outlined">menu</span></button>
+                </div>
+            </div>
+            <div id="links" class="links">
+                <a type="button" class="cerrar" href="logout">Cerrar sesion</a>
+            </div>
+        </div>
+
+        <div class="desktop">
+            <div class="logo"><img class="logo" src="/images/logo-unmar-vector.svg" alt="logo Unmar" /></div>
+
+            <div class="primary">
+                <a href="#">Services</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="secondary full">
+                <a type="button" class="cerrar" href="logout">Cerrar sesion</a>
+            </div>
+
+            <div class="secondary mini">
+                <a href="#" class="more">More</a>
+                <div class="submenu">
+                    <a type="button" class="cerrar" href="logout">Cerrar sesion</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bienvenida-container">
+        <h2>Bienvenido:
+            <% if (user) { %>
+                <span class="badge bg-success">
+                    <%= user.name %>
+                </span>
+                <% } %>
+        </h2>
+    </div>
+    <div class="container">
+
+
+        <table class="table">
+
+            <caption class="encabezado-table">Mis albumes <a href="/create" class="boton-create"
+                    alt="agregar album"><span class="material-symbols-outlined plus">
+                        add_circle
+                    </span><span class="hidden-text">Agregar album</span></a></caption>
+            <thead>
+                <tr class="bg-primary text-white">
+                    <th scope="col">ID</th>
+                    <th scope="col">USUARIO</th>
+                    <th scope="col">TITULO</th>
+                    <th scope="col">AUTOR</th>
+                    <th scope="col">FECHA DE PUBLICACION</th>
+                    <th scope="col">GENERO</th>
+                    <th scope="col">ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% results.forEach((albums)=> {%>
+                    <tr>
+                        <td data-label="ID">
+                            <%=albums.id %>
+                        </td>
+                        <td data-label="Usuario">
+                            <%=albums.user_id %>
+                        </td>
+                        <td data-label="Titulo">
+                            <%=albums.title %>
+                        </td>
+                        <td data-label="Autor">
+                            <%=albums.autor %>
+                        </td>
+                        <td data-label="Fecha de publicacion">
+                            <%=albums.release_date %>
+                        </td>
+                        <td data-label="Genero">
+                            <%=albums.genre %>
+                        </td>
+                        <td data-label="Acciones" class="actions">
+                            <a href="/edit/<%=albums.id %>" class="boton-editar">editar</a>
+                            <a href="/delete/<%=albums.id %>" class="boton-borrar">borrar</a>
+                            <a href="/album/<%= albums.id %>" class="boton-ver">Ver Canciones</a>
+                        </td>
+                    </tr>
+                    <%}) %>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const bMore = document.querySelector('#bMore');
+        const links = document.querySelector('#links');
+        bMore.addEventListener('click', e => {
+            links.classList.toggle('collapsed');
+        })
+    </script>
+</body>
+
+</html>

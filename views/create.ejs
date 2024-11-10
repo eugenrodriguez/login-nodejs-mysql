@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ABM</title>
+    <link rel="stylesheet" href="/crud-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav>
+        <div class="mobile">
+            <div class="header">
+                <div class="logo"><img class="logo" src="/images/logo-unmar-vector.svg" alt="logo Unmar" /></div>
+                <div class="more">
+                    <button id="bMore"><span class="material-symbols-outlined">menu</span></button>
+                </div>
+            </div>
+            <div id="links" class="links">
+                <a type="button" class="cerrar" href="/logout">Cerrar sesion</a>
+            </div>
+        </div>
+
+        <div class="desktop">
+            <div class="logo"><img class="logo" src="/images/logo-unmar-vector.svg" alt="logo Unmar" /></div>
+
+            <div class="primary">
+                <a href="#">Services</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="secondary full">
+                <a type="button" class="cerrar" href="/logout">Cerrar sesion</a>
+            </div>
+
+            <div class="secondary mini">
+                <a href="#" class="more">More</a>
+                <div class="submenu">
+                    <a type="button" class="cerrar" href="/logout">Cerrar sesion</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="form-container-wrapper">
+        <div class="form-container">
+            <h2>Agregar Álbum</h2>
+            <form id="addAlbumForm" action="/save" method="POST" enctype="multipart/form-data">
+                <label for="title">Nombre del Álbum:</label>
+                <input class="input-form" type="text" id="title" name="title" required>
+                <label for="autor">Autor:</label>
+                <input class="input-form" type="text" id="autor" name="autor" required>
+                <label for="genre">Genero:</label>
+                <input class="input-form" type="text" id="genre" name="genre" required>
+                <!--<label for="cover_image">Cargar tapa del album:</label>
+                <input type="file" name="cover_image" accept="image/*" required>-->
+                <label for="song">Cargar Cancion:</label>
+                <input class="input-form input-file" type="file" name="song" multiple accept=".mp3,.wav" required>
+                <button class="button-form" type="submit">Agregar</button>
+                <a href="/" class="boton-cancelar">Cancelar</a>
+            </form>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

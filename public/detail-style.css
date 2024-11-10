@@ -1,0 +1,257 @@
+/* create-style.css */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    /* Asegura que el cuerpo ocupe toda la altura de la ventana */
+    margin: 0;
+    /* Elimina márgenes predeterminados */
+    /* Utiliza flexbox para centrar contenido */
+    align-items: center;
+    /* Centra verticalmente el contenido */
+    justify-content: center;
+    /* Centra horizontalmente el contenido */
+    font-family: "Signika", sans-serif;
+    /* Cambia la fuente si lo deseas */
+
+}
+
+
+.album-section {
+    text-align: center;
+    /* Centra el texto dentro de la sección del álbum */
+    /* Espaciado alrededor del contenido */
+    border: 1px solid #ccc;
+    /* Opcional: añade un borde */
+    border-radius: 20px;
+    /* Opcional: bordes redondeados */
+    background-color: rgb(144, 251, 255);
+    /* Opcional: color de fondo */
+    border: 10px rgb(0, 213, 255) solid;
+    max-width: 700px;
+    margin: auto;
+    padding: 0;
+    overflow: hidden;
+    margin-top: 60px;
+    margin-bottom: 600px;
+}
+
+.album-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 50px;
+    margin-bottom: 50px;
+    text-align: left;
+    font-size: 22px;
+    border-bottom: 1px solid rgb(0, 213, 255);
+}
+
+.album-title {
+    width: 100%;
+    background-color: rgb(0, 225, 255);
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.back-button {
+    display: inline-block;
+    background-color: rgb(162, 162, 162);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    margin-right: 100px;
+}
+
+.back-button:hover {
+    background-color: rgb(132, 132, 132);
+}
+
+.song-list-section h2 {
+    margin-bottom: 50px;
+    background-color: rgb(189, 247, 255);
+    padding: 20px 0 20px 0;
+}
+
+.song-list {
+    list-style: none;
+    text-align: center;
+    justify-content: center;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.song-list li {
+    border: 3px white solid;
+    margin-bottom: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: rgb(189, 247, 255);
+    transition: box-shadow 0.2s;
+}
+
+.song-list li:hover {
+    box-shadow: 0 0 20px white;
+}
+
+.audio-component {
+    width: 100%;
+    /* Cambia el ancho del componente */
+    border: 2px solid #3498db;
+    /* Borde del componente */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    background-color: #f1f1f1;
+    /* Color de fondo */
+    margin-top: 30px;
+}
+
+
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+.collapsed {
+    display: none;
+}
+
+nav {
+    background-color: rgb(1, 50, 56);
+    color: white;
+    width: 100%;
+    margin: 0;
+}
+
+nav .mobile {
+    display: none;
+}
+
+nav .mobile .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+nav .mobile .header .more button {
+    border: none;
+    background-color: #00c3ff;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.mini .submenu:hover {
+    border-radius: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 20px 25px;
+    transition: background-color 0.3s;
+    transition: border-radius 0.3s;
+}
+
+nav a:hover {
+    color: black;
+    background-color: rgb(0, 225, 255);
+    border-radius: 15px;
+    transition: background-color 0.3s;
+    transition: border-radius 0.3s;
+}
+
+nav .desktop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .desktop .primary,
+nav .desktop .secondary {
+    display: flex;
+}
+
+nav .desktop .secondary.mini {
+    display: none;
+}
+
+.logo {
+    max-width: 70px;
+    height: auto;
+}
+
+
+@media screen and (max-width: 894px) {
+
+    nav .secondary.full {
+        display: none;
+
+    }
+
+    nav .secondary.full:hover {
+        display: none;
+        background-color: rgb(0, 225, 255);
+        border-radius: 15px;
+
+    }
+
+    nav .secondary.mini {
+        display: block !important;
+    }
+
+    nav .more {
+        margin: 0;
+    }
+
+    nav .secondary.mini .submenu {
+        background-color: rgb(1, 50, 56);
+        position: absolute;
+        display: none;
+        width: 200px;
+        right: 0;
+    }
+
+    nav .secondary.mini:hover .submenu {
+        display: block;
+    }
+
+
+}
+
+@media screen and (max-width: 700px) {
+    nav .desktop {
+        display: none;
+    }
+
+    nav .mobile {
+        display: block;
+    }
+}
