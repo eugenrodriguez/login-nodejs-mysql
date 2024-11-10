@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ABM</title>
+    <link rel="stylesheet" href="/crud-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav>
+        <div class="mobile">
+            <div class="header">
+                <div class="logo"><img class="logo" src="/images/logo-unmar-vector.svg" alt="logo Unmar" /></div>
+                <div class="more">
+                    <button id="bMore"><span class="material-symbols-outlined">menu</span></button>
+                </div>
+            </div>
+            <div id="links" class="links">
+                <a type="button" class="cerrar" href="/logout">Cerrar sesion</a>
+            </div>
+        </div>
+
+        <div class="desktop">
+            <div class="logo"><img class="logo" src="/images/logo-unmar-vector.svg" alt="logo Unmar" /></div>
+
+            <div class="primary">
+                <a href="#">Services</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <div class="secondary full">
+                <a type="button" class="cerrar" href="/logout">Cerrar sesion</a>
+            </div>
+
+            <div class="secondary mini">
+                <a href="#" class="more">More</a>
+                <div class="submenu">
+                    <a type="button" class="cerrar" href="/logout">Cerrar sesion</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <% if (album) { %>
+        <div class="form-container-wrapper">
+            <div class="form-container">
+                <h2>Editar Álbum</h2>
+                <form id="addAlbumForm" action="/update" method="POST" enctype="multipart/form-data">
+                    <input id="id" name="id" value="<%=album.id%>" hidden>
+                    <label for="title">Nombre del Álbum:</label>
+                    <input class="input-form" type="text" id="title" name="title" value="<%=album.title%>" required>
+                    <label for="autor">Autor:</label>
+                    <input class="input-form" type="text" id="autor" name="autor" value="<%=album.autor%>" required>
+                    <label for="genre">Genero:</label>
+                    <input class="input-form" type="text" id="genre" name="genre" value="<%=album.genre%>" required>
+
+                    <label for="song">Sube una canción:</label>
+                    <input class="input-form input-file" type="file" name="song" accept="audio/*">
+                    <button class="button-form" type="submit">Actualizar</button>
+                    <a href="/" class="boton-cancelar">Cancelar</a>
+                </form>
+                <% if (album.songs.length> 0) { %>
+                    <h3 class="title-delete-song">Canciones de: <%= album.title %>
+                    </h3>
+                    <ul class="song-delete-list">
+                        <% album.songs.forEach(function(song) { %>
+                            <li class="song-delete-list-li">
+                                <span>
+                                    <%= song.name %>
+                                </span>
+                                <form action="/delete-song/<%= song.id %>" method="POST" style="display:inline;">
+                                    <button class="delete-song-button" type="submit"
+                                        onclick="return confirm('¿Estás seguro de que deseas eliminar esta canción?');">Eliminar</button>
+                                </form>
+                            </li>
+                            <% }); %>
+                    </ul>
+                    <% } else { %>
+                        <p>No hay canciones en este álbum.</p>
+                        <% } %>
+            </div>
+        </div>
+        <% } %>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>

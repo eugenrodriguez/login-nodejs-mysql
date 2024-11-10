@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        <%= album.title %> - Detalles
+    </title>
+    <link rel="stylesheet" href="/detail-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<header>
+    <nav>
+        <div class="mobile">
+            <div class="header">
+                <div class="logo"><img class="logo" src="/images/logo-unmar-vector.svg" alt="logo Unmar" /></div>
+                <div class="more">
+                    <button id="bMore"><span class="material-symbols-outlined">menu</span></button>
+                </div>
+            </div>
+            <div id="links" class="links">
+                <a type="button" class="cerrar" href="/logout">Cerrar sesion</a>
+            </div>
+        </div>
+
+        <div class="desktop">
+            <div class="logo"><img class="logo" src="/images/logo-unmar-vector.svg" alt="logo Unmar" /></div>
+
+            <div class="primary">
+                <a class="back-button" href="/">Volver</a>
+                <a href="#">Services</a>
+                <a href="#">About</a>
+            </div>
+
+            <div class="secondary full">
+                <a type="button" class="cerrar" href="/logout">Cerrar sesion</a>
+            </div>
+
+            <div class="secondary mini">
+                <a href="#" class="more">More</a>
+                <div class="submenu">
+                    <a type="button" class="cerrar" href="/logout">Cerrar sesion</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <div class="album-section">
+        <div class="album-title">
+            <h1>
+                <%= album.title %>
+            </h1>
+        </div>
+        <div class="album-details">
+            <p>Autor: <%= album.autor %>
+            </p>
+            <p>Género: <%= album.genre %>
+            </p>
+            <p>Fecha de lanzamiento: <%= album.release_date.toDateString() %>
+            </p>
+        </div>
+        <div class="song-list-section">
+            <h2>Canciones</h2>
+            <ul class="song-list">
+                <% songs.forEach(song=> { %>
+                    <li>
+                        <strong>
+                            <%= song.name %>
+                        </strong>
+                        <audio controls class="audio-component">
+                            <source src="/uploads/<%= song.file_path.split('uploads')[1] %>" type="audio/mpeg">
+                            Tu navegador no soporta la reproducción de audio.
+                        </audio>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
